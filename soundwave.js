@@ -1,5 +1,5 @@
 var t = 0
-var variance = 10
+var variance = 0
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight)
 }
@@ -19,7 +19,7 @@ function draw() {
   
   if (document.getElementById('song').paused === false) {
     t += 0.04
-    if (variance <= height/2) {
+    if (variance <= height) {
       variance += 0.04
     }
   }
