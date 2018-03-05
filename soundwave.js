@@ -3,8 +3,19 @@ var variance = 0
 var song
 var amp
 
+function toggleSong() {
+  if (song.isPlaying()) {
+    song.pause()
+  } else {
+    song.play()
+  }
+}
+function mouseClicked() {
+  toggleSong()
+}
+
 function preload() {
-  song = loadSound("song2.mp3")
+  song = loadSound("song3.mp3")
 }
 
 function setup() {
@@ -25,7 +36,7 @@ function draw() {
   
   beginShape(TRIANGLE_STRIP)
   for (var x = 0; x < width; x+=20) {
-    vertex(x, map(noise(x + t), 0, 1, (height/2) - amp.getLevel()*height - 20, (height/2) + amp.getLevel()*height + 20) )
+    vertex(x, map(noise(x + t), 0, 1, (height/2) - amp.getLevel()*height, (height/2) + amp.getLevel()*height) )
   }
   endShape()
   
