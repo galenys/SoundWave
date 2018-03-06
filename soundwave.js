@@ -15,7 +15,7 @@ function mouseClicked() {
 }
 
 function preload() {
-  song = loadSound("song3.mp3")
+  song = loadSound("song2.mp3")
 }
 
 function setup() {
@@ -26,13 +26,13 @@ function setup() {
 }
 
 function draw() {
+  variance = height * amp.getLevel()
+  
   background(0, 0, 0)
   
   fill(255,255,255)
   stroke(0, 255, 41) // rgb(0, 255, 41)
   noFill()
-  
-  variance = height * amp.getLevel()
   
   beginShape(TRIANGLE_STRIP)
   for (var x = 0; x < width; x+=20) {
