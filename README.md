@@ -11,7 +11,7 @@ Hi, this is a music visualiser I built in p5.js using Perlin noise. You can add 
 ## How to change the song
 - Save a .mp3 file in the repo.
 - Go to soundwave.js.
-- Change `song = song = loadSound("song2.mp3")`
+- Change `song = loadSound("song2.mp3")`
 to load whatever song you want.
 - Reload the page and it should work.
 

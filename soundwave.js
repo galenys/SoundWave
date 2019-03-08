@@ -1,44 +1,44 @@
-var t = 0
-var variance = 0
-var song
-var amp
+var t = 0;
+var variance = 0;
+var song;
+var amp;
 
 function toggleSong() {
   if (song.isPlaying()) {
-    song.pause()
+    song.pause();
   } else {
-    song.play()
+    song.play();
   }
 }
 function mouseClicked() {
-  toggleSong()
+  toggleSong();
 }
 
 function preload() {
-  song = loadSound("song2.mp3")
+  song = loadSound("song.mp3");
 }
 
 function setup() {
-  createCanvas(window.innerWidth, window.innerHeight)
-  song.play()
-  amp = new p5.Amplitude()
-  amp.setInput(song)
+  createCanvas(window.innerWidth, window.innerHeight);
+  song.play();
+  amp = new p5.Amplitude();
+  amp.setInput(song);
 }
 
 function draw() {
-  variance = height * amp.getLevel()
+  variance = height * amp.getLevel();
   
-  background(0, 0, 0)
+  background(0, 0, 0);
   
-  fill(255,255,255)
-  stroke(0, 255, 41) // rgb(0, 255, 41)
-  noFill()
+  fill(255,255,255);
+  stroke(0, 255, 41); // rgb(0, 255, 41)
+  noFill();
   
-  beginShape(TRIANGLE_STRIP)
+  beginShape(TRIANGLE_STRIP);
   for (var x = 0; x < width; x+=20) {
-    vertex(x, map(noise(x + t), 0, 1, (height/2) - amp.getLevel()*height, (height/2) + amp.getLevel()*height) )
+    vertex(x, map(noise(x + t), 0, 1, (height/2) - amp.getLevel()*height, (height/2) + amp.getLevel()*height) );
   }
-  endShape()
+  endShape();
   
-  t += 0.04
+  t += 0.04;
 }
